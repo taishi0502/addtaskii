@@ -1,0 +1,17 @@
+ <div class="col-md-12 pt-3  ">
+    <div class="card">
+      <div class="card-body " >
+        <h5 class="card-title"> <%= mission.mission%></h5>
+
+         <ul class="list-group list-group-flush">
+         <li class="list-group-item">開始日　<%= mission.startdate%></li>
+         <li class="list-group-item">期限　　<%= mission.limitdate%></li>
+         </ul>
+
+        <p class="card-text text-right"></p>
+        <p class="card-text text-right"></p>
+        <%= link_to '編集', edit_mission_path(mission.id),method: :get, class: "btn btn-primary"%>
+        <%= link_to '削除', mission_path(mission.id),method: :delete, class: "btn btn-primary"%>
+       </div>
+    </div>
+  </div>
