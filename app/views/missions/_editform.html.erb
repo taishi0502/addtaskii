@@ -1,7 +1,6 @@
-
     <%= form_with(model: @mission, local: true) do |form| %>
       <div class="mb-3">
-        <label  class="form-label">課題を設定しよう！</label>
+        <label  class="form-label">これは編集画面ですよ</label>
         <%= form.text_field :mission, class:"form-control",placeholder: "text", rows: "10" %>
       </div>
       <div class="mb-3">
@@ -20,6 +19,3 @@
         <%= form.submit "SEND",class: "btn btn-primary" %>
       </div>
     <% end %>
-
-   
-  

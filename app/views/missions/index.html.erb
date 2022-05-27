@@ -1,12 +1,17 @@
-<div class="float-right">
-<h1>Top page</h1>
-<%= link_to '新規作成', new_mission_path %>
-<div class="missions float-right " >
-  <div class="row">
+<div>
+  <div class="mb-3">
+    <h1 class="top">Mission List</h1>
+  </div>
+
+  <div class="mb-3">
+    <%= link_to 'missionを設定', new_mission_path, class: "btn btn-primary" %>
+  </div>
+  <div class="missions float-right " >
+   <div class="row">
 
         <%= render partial: "mission", collection: @missions %>
 
-  </div>
-</div>
+   </div>
+   </div>
 </div>
 
