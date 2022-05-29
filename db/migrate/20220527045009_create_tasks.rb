@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
   def change
     create_table :tasks do |t|
       t.string :task, null: false
-      t.references :mission,  foreign_key: true
+      t.integer :mission_id
       t.timestamps
     end
   end
