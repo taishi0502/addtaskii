@@ -1,0 +1,33 @@
+ <div class="col-md-12 pt-3  ">
+    <div class="card">
+      <div class="card-body " >
+        <h5 class="card-title"> <%= @mission.mission%></h5>
+
+         <ul class="list-group list-group-flush">
+         <li class="list-group-item">開始日　<%= @mission.startdate%></li>
+         <li class="list-group-item">期限　　<%= @mission.limitdate%></li>
+         </ul>
+<div class="row">
+       <div class="spinner-grow text-danger col-6" role="status">
+         <span class="visually-hidden">いいいいいいい</span>
+       </div>
+       <div class="alert alert-danger col-6" role="alert">
+         この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+      </div>
+</div>  
+ <%= form_with(model: [@mission, @task], local: true) do |form| %>
+        <%= form.text_area :task, placeholder: "タスクの設定", rows: "2" %>
+         <%= form.submit "SEND" %>
+         <% end %>
+      <div class="tasks">
+       <h4>＜タスク一覧＞</h4>
+      <% @tasks.each do |t| %>
+         <p>
+           <%= t.task %>
+        </p>
+      <% end %>
+     </div>   
+      <p class="card-text text-right"></p>
+        <%= link_to 'タスク設定', root_path,method: :get, class: "btn btn-danger"%>
+        <%= link_to '編集', edit_mission_path(@mission.id),method: :get, class: "btn btn-primary"%>
+        <%= link_to '削除', mission_path(@mission.id),method: :delete, class: "btn btn-primary"%>

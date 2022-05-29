@@ -1,0 +1,18 @@
+        <%= form_with model: @task ,local: true do |f|%>
+            <div class="field">
+              <%= f.label :task, "タスクの設定" %><br />
+              <%= f.text_field :task  %>
+            </div>
+            <div class="actions">
+              <%= f.submit "タスクを追加する", class: :form__btn  %>
+            </div>
+          <% end %>
+
+
+           <ul class="comments_lists">
+            <% @tasks.each do |task| %>
+              <li class="task_list">
+                 <%= task.task%>
+              </li>
+             <% end %>
+          </ul>

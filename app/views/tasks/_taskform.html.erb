@@ -1,0 +1,16 @@
+
+    <%= form_with(model:  @task, local: true) do |form| %>
+      <div class="mb-3">
+        <label  class="form-label">taskを設定しよう！</label>
+        <%= form.text_field :task, class:"form-control",placeholder: "図書館に行って勉強する", rows: "3" %>
+      </div>
+
+      <div class="mb-3">
+      </div>
+      <div class="mb-3">
+      </div>
+
+      <div class="mb-3">
+        <%= form.submit "SEND",class: "btn btn-primary" %>
+      </div>
+    <% end %>

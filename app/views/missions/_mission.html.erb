@@ -7,9 +7,21 @@
          <li class="list-group-item">開始日　<%= mission.startdate%></li>
          <li class="list-group-item">期限　　<%= mission.limitdate%></li>
          </ul>
+<div class="row">
+       <div class="spinner-grow text-danger col-6" role="status">
+         <span class="visually-hidden">いいいいいいい</span>
+       </div>
+       <div class="alert alert-danger col-6" role="alert">
+         この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+      </div>
+</div>  
+
+     
+  
 
         <p class="card-text text-right"></p>
-        <p class="card-text text-right"></p>
+        <%= link_to 'タスク設定', root_path,method: :get, class: "btn btn-danger"%>
+        <%= link_to '詳細', mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '編集', edit_mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(mission.id),method: :delete, class: "btn btn-primary"%>
        </div>

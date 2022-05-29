@@ -22,11 +22,9 @@ ActiveRecord::Schema.define(version: 2022_05_27_045009) do
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "task", null: false
-    t.bigint "mission_id"
+    t.integer "mission_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["mission_id"], name: "index_tasks_on_mission_id"
   end
 
-  add_foreign_key "tasks", "missions"
 end
