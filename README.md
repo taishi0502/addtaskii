@@ -72,7 +72,7 @@ belongs_to :mission
 ## countsテーブル
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
-|  count             | integer | null: false|
+|  mission_count     | integer | null: false|
 | user               |references | null: false, foreign_key: true |
 
 ### Association

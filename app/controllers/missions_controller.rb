@@ -4,7 +4,7 @@ class MissionsController < ApplicationController
      
      @missions = Mission.all
      @task = Task.new
-
+     
   end
 
 

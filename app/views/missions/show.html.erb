@@ -7,6 +7,8 @@
          <li class="list-group-item">開始日　<%= @mission.startdate%></li>
          <li class="list-group-item">期限　　<%= @mission.limitdate%></li>
          </ul>
+<% if @mission.tasks.present? %>
+<% else %>
 <div class="row">
        <div class="spinner-grow text-danger col-6" role="status">
          <span class="visually-hidden">いいいいいいい</span>
@@ -15,19 +17,31 @@
          この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
       </div>
 </div>  
+<% end %>
  <%= form_with(model: [@mission, @task], local: true) do |form| %>
-        <%= form.text_area :task, placeholder: "タスクの設定", rows: "2" %>
-         <%= form.submit "SEND" %>
-         <% end %>
+        <%= form.text_field :task, placeholder: "タスクの設定", rows: "2" %>
+        <% if @mission.tasks.present? %>
+        <%= form.submit "タスクの追加", class: "btn btn-primary" %>
+        <% else %>
+         <%= form.submit "タスク設定", class: "btn btn-danger" %>
+        <% end %> 
+<% end %>
+
+
       <div class="tasks">
-       <h4>＜タスク一覧＞</h4>
+      <% if @mission.tasks.present? %>
+       <p>＜タスク一覧＞</p>
+      <% else %>
+      <% end %>
+      
       <% @tasks.each do |t| %>
          <p>
            <%= t.task %>
         </p>
       <% end %>
      </div>   
+
+
       <p class="card-text text-right"></p>
-        <%= link_to 'タスク設定', root_path,method: :get, class: "btn btn-danger"%>
         <%= link_to '編集', edit_mission_path(@mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(@mission.id),method: :delete, class: "btn btn-primary"%>
