@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
+
 ActiveRecord::Schema.define(version: 2022_05_27_045009) do
 =======
 ActiveRecord::Schema.define(version: 2022_05_30_081606) do
@@ -23,12 +23,16 @@ ActiveRecord::Schema.define(version: 2022_05_30_081606) do
     t.index ["mission_id"], name: "index_favorites_on_mission_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
->>>>>>> Stashed changes
+
+=======
+ActiveRecord::Schema.define(version: 2022_05_30_042828) do
+
 
   create_table "missions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "mission", null: false
     t.date "startdate", null: false
     t.date "limitdate", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,8 +44,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_081606) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< Updated upstream
-=======
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -55,7 +58,9 @@ ActiveRecord::Schema.define(version: 2022_05_30_081606) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
   add_foreign_key "favorites", "missions"
   add_foreign_key "favorites", "users"
->>>>>>> Stashed changes
+
+
 end

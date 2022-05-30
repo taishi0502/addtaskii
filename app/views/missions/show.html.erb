@@ -18,15 +18,17 @@
       </div>
 </div>  
 <% end %>
- <%= form_with(model: [@mission, @task], local: true) do |form| %>
+
+ <% if user_signed_in? && current_user.id == @mission.user.id %>
+  <%= form_with(model: [@mission, @task], local: true) do |form| %>
         <%= form.text_field :task, placeholder: "タスクの設定", rows: "2" %>
         <% if @mission.tasks.present? %>
         <%= form.submit "タスクの追加", class: "btn btn-primary" %>
         <% else %>
          <%= form.submit "タスク設定", class: "btn btn-danger" %>
         <% end %> 
+  <% end %>
 <% end %>
-
 
       <div class="tasks">
       <% if @mission.tasks.present? %>
@@ -41,7 +43,8 @@
       <% end %>
      </div>   
 
-
+    <% if user_signed_in? && current_user.id == @mission.user.id %>
       <p class="card-text text-right"></p>
         <%= link_to '編集', edit_mission_path(@mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(@mission.id),method: :delete, class: "btn btn-primary"%>
+    <% end %>

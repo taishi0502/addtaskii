@@ -3,10 +3,13 @@
   <div class="mb-3">
     <h1 class="top">Mission List</h1>
   </div>
-
+<% unless user_signed_in? %>
+<% else %>
   <div class="mb-3">
     <%= link_to 'missionを設定', new_mission_path, class: "btn btn-primary" %>
   </div>
+<% end %>
+  
   <div class="missions float-right " >
    <div class="row">
 
