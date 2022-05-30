@@ -4,6 +4,7 @@ class CreateMissions < ActiveRecord::Migration[6.0]
       t.string :mission, null: false
       t.date :startdate, null: false
       t.date :limitdate, null: false
+      t.integer :user_id
       t.timestamps
     end
   end
