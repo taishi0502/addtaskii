@@ -1,8 +1,14 @@
  <div class="col-md-12 pt-3  ">
     <div class="card">
+    <div class="mission_user_name">
+    <% if user_signed_in? && current_user.id == mission.user.id %>
+          <div class="myname">My Mission</div>
+    <% else %>
+          <%= mission.user.name%>
+    <% end %>
+    </div>
       <div class="card-body " >
         <h5 class="card-title"> <%= mission.mission%></h5>
-
          <ul class="list-group list-group-flush">
          <li class="list-group-item">開始日　<%= mission.startdate%></li>
          <li class="list-group-item">期限　　<%= mission.limitdate%></li>
@@ -35,15 +41,40 @@
   
 
         <p class="card-text text-right"></p>
-    <% if user_signed_in? && current_user.id == mission.user.id %>
+  <% if user_signed_in? && current_user.id == mission.user.id %>
         <% if mission.tasks.present? %>
           <%= link_to 'タスクを追加', mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <% else %>
           <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
         <% end %>
+  <% else %>
+          <%= link_to '詳細', mission_path(mission.id),method: :get, class: "btn btn-success"%>
+  <% end %>
+
+    <% if user_signed_in? && current_user.id == mission.user.id %>
+
         <%= link_to '編集', edit_mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(mission.id),method: :delete, class: "btn btn-primary"%>
     <% end %>
+
+  <%# <% @missions.each do |mission| %>
+    <%# (<%= mission.favorited_users.count %>
+   <%# <% end %>  
+<% if user_signed_in? && current_user.id %>
+<% if mission.favorited_by?(current_user) %>
+<%= link_to  mission_favorites_path(mission), method: :delete do %>
+  <i class="bi bi-megaphone success"></i>
+  
+  <%= mission.favorites.count  %>
+<% end %>
+<% else %>
+<%= link_to mission_favorites_path(mission), method: :post do %>
+  <i class="bi bi-megaphone success"></i>
+  <%= mission.favorites.count %>
+<% end %>
+<% end %>
+<% end %>
+
        </div>
     </div>
   </div>

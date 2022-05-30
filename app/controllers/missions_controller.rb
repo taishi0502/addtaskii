@@ -4,7 +4,8 @@ class MissionsController < ApplicationController
   def index
      @missions = Mission.all
      @task = Task.new
-     
+    #  @favorite = Favorite.new
+   
   end
 
 
