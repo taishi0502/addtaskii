@@ -7,9 +7,39 @@
          <li class="list-group-item">開始日　<%= mission.startdate%></li>
          <li class="list-group-item">期限　　<%= mission.limitdate%></li>
          </ul>
+<% if mission.tasks.present? %>
+<% else %>
+<div class="row">
+       <div class="spinner-grow text-danger col-6" role="status">
+         <span class="visually-hidden">いいいいいいい</span>
+       </div>
+       <div class="alert alert-danger col-6" role="alert">
+         この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+      </div>
+</div>  
+<% end %>
+      <div class="tasks">
+       <% if mission.tasks.present? %>
+       <p>＜タスク一覧＞</p>
+       <% else %>
+      
+       <% end %>
+      
+      <% mission.tasks.each do |t| %>
+         <p>
+           <%= t.task %>
+        </p>
+      <% end %>
+     </div>   
+ 
+  
 
         <p class="card-text text-right"></p>
-        <p class="card-text text-right"></p>
+        <% if mission.tasks.present? %>
+          <%= link_to 'タスクを追加', mission_path(mission.id),method: :get, class: "btn btn-primary"%>
+        <% else %>
+          <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
+        <% end %>
         <%= link_to '編集', edit_mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(mission.id),method: :delete, class: "btn btn-primary"%>
        </div>
