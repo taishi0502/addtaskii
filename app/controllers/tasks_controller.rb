@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-
   def create
    
     @task = Task.create(task_params)
@@ -23,4 +22,6 @@ class TasksController < ApplicationController
   def get_mission
     @mission = Mission.find(params[:id])
   end
+
+
 end

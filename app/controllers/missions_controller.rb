@@ -1,7 +1,7 @@
 class MissionsController < ApplicationController
-  def index
+  before_action :move_to_index, except: [:index, :show]
 
-     
+  def index
      @missions = Mission.all
      @task = Task.new
      
@@ -58,11 +58,17 @@ class MissionsController < ApplicationController
 
   private
   def mission_params
-    params.require(:mission).permit(:mission, :startdate, :limitdate)
+    params.require(:mission).permit(:mission, :startdate, :limitdate).merge(user_id: current_user.id)
   end
  
   def get_mission
     @mission = Mission.find(params[:id])
   end
- 
+  
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
 end
