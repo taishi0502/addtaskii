@@ -1,12 +1,23 @@
- <div class="col-md-12 pt-3  ">
+  <div class="mypage" >
+
+   <div class="row">
+   <div class="contents row">
+  <h1 class="mypage-title"><%= @name %><span class="sannno">さんの</span>Mision List</h1>
+<% unless user_signed_in? %>
+<% else %>
+  <div class="mb-3">
+    <%= link_to 'missionを設定', new_mission_path, class: "btn btn-primary" %>
+    <%= link_to 'みんなのMission',missions_path, class: "btn btn-success" %>
+    
+  </div>
+  
+<% end %>
+
+  <% @missions.each do |mission| %>
+  <div class="col-md-12 pt-3  ">
     <div class="card shadow">
     <div class="mission_user_name">
-    <% if user_signed_in? && current_user.id == mission.user.id %>
-          <div class="myname">My Mission</div>
-
-    <% else %>
-          <%= mission.user.name%>
-    <% end %>
+         <div class="myname">My Mission</div>
     </div>
       <div class="card-body " >
         <h5 class="card-title"> <%= mission.mission%></h5>
@@ -66,7 +77,7 @@
 <%= link_to  mission_favorites_path(mission), method: :delete do %>
   <i class="bi bi-megaphone success"></i>
   
-  <%= mission.favorites.count  %>
+  <%= @mission.favorites.count  %>
 <% end %>
 <% else %>
 <%= link_to mission_favorites_path(mission), method: :post do %>
@@ -79,3 +90,12 @@
        </div>
     </div>
   </div>
+
+
+  <% end %>
+
+        <%# <%= render partial: "mypage", collection: @missions %> 
+
+  </div>
+</div>
+</div>
