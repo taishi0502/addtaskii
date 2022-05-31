@@ -48,3 +48,17 @@
         <%= link_to '編集', edit_mission_path(@mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(@mission.id),method: :delete, class: "btn btn-primary"%>
     <% end %>
+
+<% if user_signed_in? && current_user.id %>
+    <% if @mission.favorited_by?(current_user) %>
+      <%= link_to  mission_favorites_path(@mission), method: :delete do %>
+        <i class="bi bi-megaphone"></i>
+        <%= @mission.favorites.count %>
+      <% end %>   
+    <% else %>
+      <%= link_to mission_favorites_path(@mission), method: :post do %>
+         <i class="bi bi-megaphone"></i>
+         <%= @mission.favorites.count %>
+      <% end %>
+     <% end %>
+<% end %>
