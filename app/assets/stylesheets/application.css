@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: white;
 }
 a{
@@ -20,18 +20,18 @@ nav{
   text-align: center;
 }
 .missions{
-}
+} */
 
-/*以下navbar*/
+/* 以下navbar
 .navlist{
   text-decoration: none;
   color: white;
   font-family: 'Poppins', sans-serif;
-}
+} */
 /*以上navbar*/
 
 /* 以下マイページ */
-.users{
+/* .users{
   background-color: #D7EEFF	;
 }
 .mypage-title{
@@ -46,6 +46,6 @@ nav{
 .btn-btn{
 
 
-}
+} */
 
 /* 以上マイページ */
