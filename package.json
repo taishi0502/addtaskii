@@ -7,7 +7,7 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "4.3.0",
-    "bootstrap": "^5.2.0-beta1",
+    "bootstrap": "^5.0.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
@@ -15,8 +15,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^4.9.0"
-  },  
-  "engines" : {
-    "node": "14.19.1"  
+  },
+  "engines": {
+    "node": "14.19.1"
   }
 }
