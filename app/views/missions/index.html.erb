@@ -2,7 +2,7 @@
 <div>
   <div class="mb-3">
   <% unless user_signed_in? %>
-    <h1 class="mypage-title"></span>addtaskiiとあなたの友達があなたの課題解決のサポートします。 </h1>  
+    <h1 class="mypage-title"></span>addtaskiiへようこそ。使い方はシンプルです。 </h1>  
   <% else %>
     <h1 class="top">Mission List</h1>
   <% end %>
@@ -23,7 +23,7 @@
      <%= link_to "マイページ", "/users/#{current_user.id}", class: "btn btn-success"%>
      </div>
        <div class="missions float-right " >
-   <div class="row">
+     <div class="row">
 
         <%= render partial: "mission", collection: @missions %>
 

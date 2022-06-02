@@ -41,10 +41,16 @@
          <% end %>
         </li>
       </ul>
-      <form class="d-flex">
+      <%= form_with(url: search_missions_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "tn btn-outline-success" %>
+      <% end %>
+      <div class="contents row">
+        <%# <%= render 'missions/search' %> %>
+      <%# <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> %>
     </div>
 
 

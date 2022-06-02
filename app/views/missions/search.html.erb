@@ -1,0 +1,5 @@
+      <div class="contents row">
+        <% @missions.each do |mission| %>
+          <%= render partial: "mission",  locals: { mission: mission } %>
+        <% end %>
+    </div>

@@ -12,4 +12,13 @@ class Mission < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
 
+  def self.search(search)
+    if search != ""
+      Mission.where('mission LIKE(?)', "%#{search}%")
+    else
+      Mission.all
+    end
+  end
+
+
 end

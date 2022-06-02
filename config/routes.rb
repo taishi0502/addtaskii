@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :missions do
     resources :tasks, only: [:create]
     resource :favorites, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
    
 end

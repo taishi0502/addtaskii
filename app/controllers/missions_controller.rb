@@ -1,8 +1,8 @@
 class MissionsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-     @missions = Mission.all
+     @missions = Mission.all.order(created_at: :desc)
      @task = Task.new
     #  @favorite = Favorite.new
    
@@ -56,6 +56,9 @@ class MissionsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @missions = Mission.search(params[:keyword])
+  end
 
   private
   def mission_params
