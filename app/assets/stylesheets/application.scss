@@ -46,7 +46,11 @@ nav{
   font-family: 'Poppins', sans-serif;
 }
 /* 以上navbar */
-
+.bib{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #e54747;
+}
 /* 以下マイページ */
 .users{
   background-color: #D7EEFF	;
@@ -66,3 +70,63 @@ nav{
 }
 
 /* 以上マイページ */
+
+/*Fight機能色*/
+ 
+// .like-link {
+//   font-family: 'Poppins', sans-serif;
+//   color: #e54747;
+
+// }
+// .unlike-link {
+//   font-family: 'Poppins', sans-serif;
+//   font-size: 1em;
+//   text-decoration: none;
+// }
+// .bbtn{
+//   font-family: 'Poppins', sans-serif;
+//   color: #e54747;
+// }
+// .unbtn{
+//   font-family: 'Poppins', sans-serif;
+//   font-size: 1em;
+//   text-decoration: none;
+// }
+
+.like-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #e54747;
+}
+.like-link:hover {
+  text-decoration: none;
+}
+
+.unlike-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+}
+.unlike-link:hover {
+  text-decoration: none;
+}
+.bbtn{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #e54747;
+}
+.bbtn:hover {
+  text-decoration: none;
+}
+.unbtn{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+}
+.unbtn:hover {
+  text-decoration: none;
+}
+
+
+
+/*以上Fight機能色*/
