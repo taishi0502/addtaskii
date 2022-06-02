@@ -1,0 +1,12 @@
+  <% if mission.favorited_by?(current_user) %>
+    <%= link_to  mission_favorites_path(mission), method: :delete, remote: true  do %>
+      <i class="bi bi-megaphone success"></i>
+      <%= mission.favorites.count  %>Fight!!
+    <% end %>
+  
+<% else %>
+    <%= link_to mission_favorites_path(mission), method: :post, remote: true do %>
+      <i class="bi bi-megaphone success"></i>
+      <%= mission.favorites.count %>Fight!!
+    <% end %>
+    <% end %>

@@ -13,12 +13,10 @@ class Mission < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Mission.where('mission LIKE(?)', "%#{search}%")
     else
       Mission.all
     end
   end
-
-
 end

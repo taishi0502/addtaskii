@@ -1,37 +1,35 @@
  <div class="col-sm-6 pt-3  ">
     <div class="card shadow">
     <div class="mission_user_name">
-    <% if user_signed_in? && current_user.id == mission.user.id %>
+      <% if user_signed_in? && current_user.id == mission.user.id %>
           <div class="myname">My Mission</div>
-
-    <% else %>
+      <% else %>
           <%= mission.user.name%>
-    <% end %>
+      <% end %>
     </div>
-      <div class="card-body " >
+    <div class="card-body " >
         <h5 class="card-title"> <%= mission.mission%></h5>
          <ul class="list-group list-group-flush">
          <li class="list-group-item">開始日　<%= mission.startdate%></li>
          <li class="list-group-item">期限　　<%= mission.limitdate%></li>
          </ul>
-<% if mission.tasks.present? %>
-<% else %>
-<div class="row">
-       <div class="spinner-grow text-danger col-6" role="status">
-         <span class="visually-hidden">いいいいいいい</span>
-       </div>
-       <div class="alert alert-danger col-6" role="alert">
-         この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
-      </div>
-</div>  
-<% end %>
-      <div class="tasks">
+     <% if mission.tasks.present? %>
+     <% else %>
+          <div class="row">
+              <div class="spinner-grow text-danger col-6" role="status">
+                 <span class="visually-hidden">いいいいいいい</span>
+              </div>
+          <div class="alert alert-danger col-6" role="alert">
+                  この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+          </div>
+     </div>  
+     <% end %>
+
+    <div class="tasks">
        <% if mission.tasks.present? %>
        <p>＜タスク一覧＞</p>
        <% else %>
-      
        <% end %>
-      
       <% mission.tasks.each do |t| %>
          <p>
            <%= t.task %>
@@ -58,21 +56,17 @@
         <%= link_to '削除', mission_path(mission.id),method: :delete, class: "btn btn-primary"%>
     <% end %>
 
-<% if user_signed_in? && current_user.id %>
-<% if mission.favorited_by?(current_user) %>
-<%= link_to  mission_favorites_path(mission), method: :delete do %>
-  <i class="bi bi-megaphone success"></i>
-  
-  <%= mission.favorites.count  %>
-<% end %>
-<% else %>
-<%= link_to mission_favorites_path(mission), method: :post do %>
-  <i class="bi bi-megaphone success"></i>
-  <%= mission.favorites.count %>
-<% end %>
-<% end %>
-<% end %>
 
-       </div>
+
+
+
+
+    <div class="favorites_buttons_<%= mission.id %>">
+      <%= render "favorites/favorite", mission: mission %>
     </div>
-  </div>
+ 
+
+
+</div>
+</div>
+</div>
