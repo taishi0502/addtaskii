@@ -29,18 +29,9 @@
    <div class="right-parent">
      <div class="right-elements"></div>
      <% if user_signed_in?%>
-     <button type="button" class="btn btn-outline-warning">
-        <%= link_to "Lv.#{current_user.level}", "/users/#{current_user.id}", class: "navbar-brand"%>
-        <%= link_to (current_user.name), "/users/#{current_user.id}", class: "navbar-brand"%>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-     </button>
-    <% else %>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    <% end %>
+         <%= render 'missions/navbar' %>
+     <% else %>
+     <% end %>
 
 
     </div>
