@@ -12,12 +12,9 @@ class MissionsController < ApplicationController
   end
 
   def create
-    mission = Mission.create(mission_params)
-
+    mission = Mission.new(mission_params)
     if mission.save
-
       redirect_to root_path
-
     else
       render :new
     end
@@ -42,7 +39,11 @@ class MissionsController < ApplicationController
     end
   end
 
-  def destroy
+  def levelup
+    @user = current_user
+    @level = @user.increment(:level, 1)
+    @level.save
+
     @mission = Mission.find(params[:id])
     @mission.destroy
     redirect_to root_path
@@ -50,6 +51,13 @@ class MissionsController < ApplicationController
 
   def search
     @missions = Mission.search(params[:keyword])
+  end
+
+  def destroy
+    @mission = Mission.find(params[:id])
+    @mission.destroy
+
+    redirect_to root_path
   end
 
   private
@@ -64,5 +72,9 @@ class MissionsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def levelup_parmas 
+    params.require(:user).permit(:level).merge(mission_id: mission.id)
   end
 end

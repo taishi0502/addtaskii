@@ -3,4 +3,5 @@ class UsersController < ApplicationController
     @name = current_user.name
     @missions = current_user.missions.order(created_at: :desc)
   end
+
 end
