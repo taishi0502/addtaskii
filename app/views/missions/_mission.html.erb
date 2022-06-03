@@ -4,7 +4,13 @@
       <% if user_signed_in? && current_user.id == mission.user.id %>
           <div class="myname">My Mission</div>
       <% else %>
-          <%= mission.user.name%>
+          <% if mission.user.level == nil %>
+             <%= "Lv.0"%>
+             <%= mission.user.name%>
+          <% else %>
+             <%= "Lv.#{mission.user.level}"%>
+             <%= mission.user.name%>
+          <% end %>
       <% end %>
     </div>
     <div class="card-body " >
@@ -21,6 +27,12 @@
               </div>
           <div class="alert alert-danger col-6" role="alert">
                   この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+                  <br>
+                  <% unless mission.tasks.present? %>
+                   <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
+                  <% else %>
+                  <br>
+        <% end %>
           </div>
      </div>  
      <% end %>
@@ -44,7 +56,7 @@
         <% if mission.tasks.present? %>
           <%= link_to 'タスクを追加', mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <% else %>
-          <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
+          <%# <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%> 
         <% end %>
   <% else %>
           <%= link_to '詳細', mission_path(mission.id),method: :get, class: "btn btn-success"%>

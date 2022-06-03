@@ -67,6 +67,7 @@
 
         <%= link_to '編集', edit_mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <%= link_to '削除', mission_path(mission.id),method: :delete, class: "btn btn-primary"%>
+        <%= link_to '達成', levelup_mission_path(mission.id),class: "btn btn-success"%>
     <% end %>
 
   <%# <% @missions.each do |mission| %>

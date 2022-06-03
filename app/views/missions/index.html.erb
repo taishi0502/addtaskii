@@ -20,9 +20,9 @@
    <% else %>
      <div class="col-sm-10">
      <%= link_to 'missionを設定', new_mission_path, class: "btn btn-primary" %>
-     <%= link_to "マイページ", "/users/#{current_user.id}", class: "btn btn-success"%>
      </div>
        <div class="missions float-right " >
+       
      <div class="row">
 
         <%= render partial: "mission", collection: @missions %>

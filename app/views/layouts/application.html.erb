@@ -26,10 +26,17 @@
 <nav class="navbar navbar-dark shadow fixed-top" style="background-color:#000033;" >
   <div class="container-fluid">
     <%= link_to 'addtaskii', root_path, class: "navbar-brand"%>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-     
+   <div class="right-parent">
+     <div class="right-elements"></div>
+     <button type="button" class="btn btn-outline-warning">
+        <%= link_to "Lv.#{current_user.level}", "/users/#{current_user.id}", class: "navbar-brand"%>
+        <%= link_to (current_user.name), "/users/#{current_user.id}", class: "navbar-brand"%>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+     </button>
+
+    </div>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
@@ -46,13 +53,7 @@
         <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
         <%= form.submit "検索", class: "tn btn-outline-success" %>
       <% end %>
-      <div class="contents row">
-        <%# <%= render 'missions/search' %> 
-      <%# <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> %>
-    </div>
+
 
 
 

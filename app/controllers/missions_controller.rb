@@ -14,6 +14,7 @@ class MissionsController < ApplicationController
   def create
     mission = Mission.new(mission_params)
     if mission.save
+      flash[:success] = "更に課題についてのtaskをaddしましょう！"
       redirect_to root_path
     else
       render :new
