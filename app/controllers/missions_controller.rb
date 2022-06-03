@@ -4,7 +4,6 @@ class MissionsController < ApplicationController
   def index
     @missions = Mission.all.order(created_at: :desc)
     @task = Task.new
-    #  @favorite = Favorite.new
   end
 
   def new
