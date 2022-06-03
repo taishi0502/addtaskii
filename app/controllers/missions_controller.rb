@@ -5,14 +5,14 @@ class MissionsController < ApplicationController
     @missions = Mission.all.order(created_at: :desc)
     @task = Task.new
     @name = current_user&.name
-    @level = current_user&.level
+    @mylevel = current_user&.level
     @userid = current_user&.id
   end
 
   def new
     @mission = Mission.new
     @name = current_user&.name
-    @level = current_user&.level
+    @mylevel = current_user&.level
     @userid = current_user&.id
   end
 
@@ -28,7 +28,7 @@ class MissionsController < ApplicationController
 
   def show
     @name = current_user&.name
-    @level = current_user&.level
+    @mylevel = current_user&.level
     @userid = current_user&.id
     @mission = Mission.find(params[:id])
     @task = Task.new
@@ -38,7 +38,7 @@ class MissionsController < ApplicationController
   def edit
     @mission = Mission.find(params[:id])
     @name = current_user&.name
-    @level = current_user&.level
+    @mylevel = current_user&.level
     @userid = current_user&.id
   end
 
