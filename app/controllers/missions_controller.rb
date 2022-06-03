@@ -4,10 +4,16 @@ class MissionsController < ApplicationController
   def index
     @missions = Mission.all.order(created_at: :desc)
     @task = Task.new
+    @name = current_user&.name
+    @level = current_user&.level
+    @userid = current_user&.id
   end
 
   def new
     @mission = Mission.new
+    @name = current_user&.name
+    @level = current_user&.level
+    @userid = current_user&.id
   end
 
   def create
@@ -21,6 +27,9 @@ class MissionsController < ApplicationController
   end
 
   def show
+    @name = current_user&.name
+    @level = current_user&.level
+    @userid = current_user&.id
     @mission = Mission.find(params[:id])
     @task = Task.new
     @tasks = @mission.tasks
@@ -28,6 +37,9 @@ class MissionsController < ApplicationController
 
   def edit
     @mission = Mission.find(params[:id])
+    @name = current_user&.name
+    @level = current_user&.level
+    @userid = current_user&.id
   end
 
   def update

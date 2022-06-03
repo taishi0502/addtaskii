@@ -1,7 +1,7 @@
 
      <button type="button" class="btn btn-outline-warning">
-        <%= link_to "Lv.#{current_user&.level}", "/users/#{current_user&.id}", class: "navbar-brand"%>
-        <%= link_to (current_user&.name), "/users/#{current_user&.id}", class: "navbar-brand"%>
+        <%= link_to "Lv.#{@level}", "/users/#{@userid}", class: "navbar-brand"%>
+        <%= link_to (@name), "/users/#{@userid}", class: "navbar-brand"%>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
