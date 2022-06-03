@@ -1,38 +1,3 @@
-<nav class="navbar navbar-dark shadow fixed-top" style="background-color:#000033;" >
-  <div class="container-fluid">
-    <%= link_to 'addtaskii', root_path, class: "navbar-brand"%>
-   <div class="right-parent">
-     <div class="right-elements"></div>
-     <% if user_signed_in?%>
-         <%= render 'missions/navbar' %>
-     <% else %>
-     <% end %>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-        <% if user_signed_in? %>
-          <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "navlist"%></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navlist"%></li>
-        <% else %>
-            <li><%= link_to "ログイン", new_user_session_path, class: "navlist" %></li>
-            <li><%= link_to "新規登録", new_user_registration_path, class: "navlist"%></li>
-         <% end %>
-        </li>
-      </ul>
-      <%= form_with(url: search_missions_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
-        <%= form.submit "検索", class: "tn btn-outline-success" %>
-      <% end %>
-
-
-
-
-  </div>
-</nav>
-
-
-
 
 <div>
   <div class="mb-3">
@@ -40,6 +5,8 @@
     <h2 class="mypage-title"></span>addtaskiiへようこそ。 </h2>  
   <% else %>
     <h1 class="top">Mission List</h1>
+            <%= link_to "Lv.#{current_user.level}", "/users/#{current_user.id}", class: "navbar-brand"%>
+
   <% end %>
   </div>
 
