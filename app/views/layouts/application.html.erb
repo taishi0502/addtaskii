@@ -4,7 +4,7 @@
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MetaHelper</title>
+    <title>addtaskii</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,7 +25,7 @@
 <header>
 <nav class="navbar navbar-dark shadow fixed-top" style="background-color:#000033;" >
   <div class="container-fluid">
-    <%= link_to 'Meta Helper', root_path, class: "navbar-brand"%>
+    <%= link_to 'addtaskii', root_path, class: "navbar-brand"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,10 +42,16 @@
          <% end %>
         </li>
       </ul>
-      <form class="d-flex">
+      <%= form_with(url: search_missions_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "tn btn-outline-success" %>
+      <% end %>
+      <div class="contents row">
+        <%# <%= render 'missions/search' %> 
+      <%# <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> %>
     </div>
 
 
@@ -71,6 +77,9 @@
      <%= yield %>
 
   </div>
+ 
+  
+
  </div>
  
 
@@ -90,4 +99,5 @@
     $("p").text("成功！！");
   });
 </script> %>
+
 </html>

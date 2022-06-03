@@ -14,7 +14,7 @@
 <% end %>
 
   <% @missions.each do |mission| %>
-  <div class="col-md-12 pt-3  ">
+  <div class="col-sm-6 pt-3  ">
     <div class="card shadow">
     <div class="mission_user_name">
          <div class="myname">My Mission</div>
@@ -74,6 +74,7 @@
    <%# <% end %>  
 
 
+
     <% if mission.favorites.count > 0 %>
       <i class="bbtn bi-megaphone success">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
@@ -84,6 +85,9 @@
       <i class="unbtn bi-megaphone">
       <%= mission.favorites.count %> We can do it</i>
     <% end %>
+
+
+
 
        </div>
     </div>

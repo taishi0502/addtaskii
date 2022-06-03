@@ -1,18 +1,14 @@
 class MissionsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-     @missions = Mission.all
-     @task = Task.new
+    @missions = Mission.all.order(created_at: :desc)
+    @task = Task.new
     #  @favorite = Favorite.new
-   
   end
 
-
   def new
-   @mission = Mission.new
-
-   
+    @mission = Mission.new
   end
 
   def create
@@ -22,10 +18,7 @@ class MissionsController < ApplicationController
     else
       render :new
     end
-
-
   end
-
 
   def show
     @mission = Mission.find(params[:id])
@@ -41,7 +34,7 @@ class MissionsController < ApplicationController
     @mission = Mission.find(params[:id])
     if @mission.update(mission_params)
       redirect_to root_path
-    else 
+    else
       render :edit
     end
   end
@@ -56,6 +49,9 @@ class MissionsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @missions = Mission.search(params[:keyword])
+  end
 
   def destroy
     @mission = Mission.find(params[:id])
@@ -65,19 +61,17 @@ class MissionsController < ApplicationController
   end
 
   private
+
   def mission_params
     params.require(:mission).permit(:mission, :startdate, :limitdate).merge(user_id: current_user.id)
   end
- 
+
   def get_mission
     @mission = Mission.find(params[:id])
   end
-  
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in?
   end
 
   def levelup_parmas 

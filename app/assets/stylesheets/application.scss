@@ -14,7 +14,98 @@
  *= require_self
 
  */
-
  
+body {
+  background-color: white;
+}
+a{
+  text-decoration: none;
+}
+nav{
+  font-family: 'Poppins', sans-serif;
  
+}
 
+.top{
+  font-family: 'Poppins', sans-serif;
+}
+
+.mission_user_name{
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid lightblue;
+  text-align: center;
+}
+.missions{
+}
+
+/* 以下navbar */
+.navlist{
+  text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+/* 以上navbar */
+.bib{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #e54747;
+}
+/* 以下マイページ */
+.users{
+  background-color: #D7EEFF	;
+}
+.mypage-title{
+  font-family: 'Poppins', sans-serif;
+}
+.sannno{
+  font-size: 20px;
+}
+.mypage{
+ 
+}
+.btn-btn{
+
+
+}
+
+/* 以上マイページ */
+
+/*Fight機能色*/
+.like-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #e54747;
+}
+.like-link:hover {
+  text-decoration: none;
+}
+
+.unlike-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+}
+.unlike-link:hover {
+  text-decoration: none;
+}
+.bbtn{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #e54747;
+}
+.bbtn:hover {
+  text-decoration: none;
+}
+.unbtn{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+}
+.unbtn:hover {
+  text-decoration: none;
+}
+
+
+
+/*以上Fight機能色*/

@@ -11,5 +11,6 @@
     <%= link_to mission_favorites_path(mission),class: "unlike-link", method: :post, remote: true do %>
       <i class="unbtn bi-megaphone">
       <%= mission.favorites.count %> We can do it</i>
+
     <% end %>
     <% end %>
