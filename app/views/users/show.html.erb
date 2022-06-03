@@ -33,6 +33,13 @@
        </div>
        <div class="alert alert-danger col-6" role="alert">
          この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+                            <% if current_user.id == mission.user.id %>
+                   <br>
+                   <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
+                   <br>
+                  <% else %>
+                  
+                   <% end %>
       </div>
 </div>  
 <% end %>
@@ -57,7 +64,7 @@
         <% if mission.tasks.present? %>
           <%= link_to 'タスクを追加', mission_path(mission.id),method: :get, class: "btn btn-primary"%>
         <% else %>
-          <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
+          <%# <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%> 
         <% end %>
   <% else %>
           <%= link_to '詳細', mission_path(mission.id),method: :get, class: "btn btn-success"%>
