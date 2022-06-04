@@ -1,14 +1,22 @@
 
-<div>
-  <div class="mb-3">
-  <% unless user_signed_in? %>
-    <h2 class="mypage-title"></span>addtaskiiへようこそ。 </h2>  
-  <% else %>
-    <h1 class="top">Mission List</h1>
-  <% end %>
-  </div>
+<div class="jumbotron">
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+       <% unless user_signed_in? %>
+          <h2 class="mypage-title"></span>addtaskiiへようこそ。 </h2>  
+       <% else %>
+          <h3 class="top">Be together</h3>
+       <% end %>
+     </div>
+     <div class="missionset-btn col-sm-6">
+       <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
+     </div>
+    </div>
+ </div>
 
-<div class="row">
+<div class="container-fluid">
+ <div class="row">
    <% unless user_signed_in? %>
 
    <div class="d-grid gap-2">
@@ -18,19 +26,15 @@
    
 
    <% else %>
-     <div class="col-sm-10">
-     <%= link_to 'missionを設定', new_mission_path, class: "btn btn-primary" %>
-     </div>
-       <div class="missions float-right " >
-       
-     <div class="row">
+    
 
-        <%= render partial: "mission", collection: @missions %>
-
-  </div>
-</div>
+         <div class="row">
+            <%= render partial: "mission", collection: @missions %>
+         </div>
+      </div>
      <% end %>
-</div>
+  </div>
+ </div>
   
 
 </div>

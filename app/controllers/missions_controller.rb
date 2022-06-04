@@ -19,7 +19,7 @@ class MissionsController < ApplicationController
   def create
     mission = Mission.new(mission_params)
     if mission.save
-      flash[:success] = "更に課題についてのtaskをaddしましょう！"
+      flash[:success] = '更に課題についてのtaskをaddしましょう！'
       redirect_to root_path
     else
       render :new
@@ -86,7 +86,7 @@ class MissionsController < ApplicationController
     redirect_to action: :index unless user_signed_in?
   end
 
-  def levelup_parmas 
+  def levelup_parmas
     params.require(:user).permit(:level).merge(mission_id: mission.id)
   end
 end

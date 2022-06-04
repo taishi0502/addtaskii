@@ -14,40 +14,51 @@
          <span class="visually-hidden">いいいいいいい</span>
        </div>
        <div class="alert alert-danger col-6" role="alert">
-         この課題に対する具体的なアクションを設定しないため達成できない可能性があります！
+         この目標に対する具体的なアクションを設定しないため達成できない可能性があります！
       </div>
 </div>  
 <% end %>
 
  <% if user_signed_in? && current_user.id == @mission.user.id %>
   <%= form_with(model: [@mission, @task], local: true) do |form| %>
-        <%= form.text_field :task, placeholder: "タスクの設定", rows: "2" %>
-        <% if @mission.tasks.present? %>
-        <%= form.submit "タスクの追加", class: "btn btn-primary" %>
-        <% else %>
-         <%= form.submit "タスク設定", class: "btn btn-danger" %>
-        <% end %> 
+     <div class="row">
+       <div class="col-sm-6">
+         <%= form.text_field :task, placeholder: "目標達成のための障壁", rows: "2", class:"form-control" %>
+       </div>
+       <div class="col-sm-2">
+          <% if @mission.tasks.present? %>
+             <%= form.submit "add a task", class: "addtaskbtn" %>
+          <% else %>
+             <%= form.submit "set tasks", class: "btn btn-danger" %>
+          <% end %> 
+       </div>
+    </div>
   <% end %>
 <% end %>
 
-      <div class="tasks">
+    <div class="tasks mt-3">
       <% if @mission.tasks.present? %>
-       <p>＜タスク一覧＞</p>
+       <p><<<  Task list  >>></p>
       <% else %>
       <% end %>
-      
       <% @tasks.each do |t| %>
          <p>
            <%= t.task %>
         </p>
       <% end %>
-     </div>   
+    </div>   
 
     <% if user_signed_in? && current_user.id == @mission.user.id %>
       <p class="card-text text-right"></p>
-        <%= link_to '編集', edit_mission_path(@mission.id),method: :get, class: "btn btn-primary"%>
-        <%= link_to '削除', mission_path(@mission.id),method: :delete, class: "btn btn-primary"%>
-         <%= link_to '達成', levelup_mission_path(@mission.id),class: "btn btn-success"%>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+        <%= link_to 'edit', edit_mission_path(@mission.id),method: :get, class: "btn btn-outline"%>
+        <%= link_to 'delete', mission_path(@mission.id),method: :delete, class: "btn btn-outline"%>
+      </div>
+       <% if @mission.tasks.present? %>
+       <div class="successbtn">
+         <%= link_to 'Achieved!', levelup_mission_path(@mission.id),class: "btn btn--orange btn--circle btn--circle-a btn--shadow"%>
+      </div>
+      <% end %>
     <% end %>
 
 
