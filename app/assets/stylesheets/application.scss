@@ -132,6 +132,35 @@ a.btn--circle {
   font-size: 1em;
   color: #e54747;
 }
+/*以下目標設定画面*/
+ .set-goalform{
+   border: 1px solid #D7EEFF;
+   border-radius: 100%;
+   background-color: #D7EEFF;
+ }
+ .pokopoko{
+   background-color: #D7EEFF;
+   border-radius: 100%;
+   height: 60px;
+   width: 120px;
+   position: relative;
+   left: 60%;
+   top: 20%;
+
+   
+ }
+ .pokopoko2{
+   background-color: #D7EEFF;
+   border-radius: 60%;
+   height: 35px;
+   width: 60px;
+   position: absolute;
+   right: 40%;
+ }
+/*以上目標設定画面*/
+
+
+
 /* 以下マイページ */
 .users{
   background-color: #D7EEFF	;
@@ -177,6 +206,10 @@ a.btn--circle {
 }
 
 .form-label{
+  font-family: 'Poppins', sans-serif;
+}
+
+.list-group-item{
   font-family: 'Poppins', sans-serif;
 }
   
@@ -246,3 +279,10 @@ a.btn--circle {
   font-family: 'Poppins', sans-serif;
 }
 /*以下登録フォーム*/
+
+/*以下タスクフォーム*/
+  .task-form{
+    border: 6px double #C2EEFF	;
+    border-radius: 3%;
+  }
+/*以上タスクフォーム*/

@@ -1,23 +1,26 @@
     <%= form_with(model: @mission, local: true) do |form| %>
-        <div class="row">
-          <div class="col-md-4">        <label  class="form-label">達成したい目標は？</label>
+         <div class="row justify-content-md-center">
+          <div class="col-md-4">            
+             <label  class="form-label">達成したい目標は？</label>
              <%= form.text_field :mission, class:"form-control",placeholder: "text", rows: "10" %>
           </div>
        </div>
-        <div class="row">
-          <div class="col-md-4">        <label  class="form-label">いつから？</label>
+         <div class="row justify-content-md-center">
+          <div class="col-md-4">             
+             <label  class="form-label">いつから？</label>
              <%= form.date_field :startdate,class:"form-control", placeholder: "始まり" %>
           </div>
        </div>
 
-        <div class="row">
-          <div class="col-md-4">        <label  class="form-label">いつまで</label>
+         <div class="row justify-content-md-center">
+          <div class="col-md-4">             
+              <label  class="form-label">いつまで</label>
               <%= form.date_field :limitdate,class:"form-control", placeholder: "期限" %>
           </div>
        </div>
-        <div class="row">
-          <div class="col-md-4">    
-              <%= form.submit "SEND",class: "btn btn-primary" %>
+         <div class="row justify-content-md-center">
+          <div class="col-md-4">           
+             <%= form.submit "SEND",class: "setagoalbtn" %>
           </div>
        </div>
     <% end %>

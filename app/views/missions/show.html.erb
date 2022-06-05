@@ -1,11 +1,12 @@
 <div class="col-md-12 pt-3  ">
-    <div class="card">
+  <div class="task-form">
+  
       <div class="card-body " >
         <h5 class="card-title"> <%= @mission.mission%></h5>
 
          <ul class="list-group list-group-flush">
-         <li class="list-group-item">開始日　<%= @mission.startdate%></li>
-         <li class="list-group-item">期限　　<%= @mission.limitdate%></li>
+         <li class="list-group-item">start　　<%= @mission.startdate%></li>
+         <li class="list-group-item">end  　　<%= @mission.limitdate%></li>
          </ul>
 <% if @mission.tasks.present? %>
 <% else %>
@@ -73,6 +74,7 @@
       <i class="unbtn bi-megaphone">
       <%= @mission.favorites.count %> We can do it</i>
     <% end %>
+    </div>
 
          
       
