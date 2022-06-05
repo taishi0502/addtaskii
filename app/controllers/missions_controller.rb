@@ -89,4 +89,6 @@ class MissionsController < ApplicationController
   def levelup_parmas
     params.require(:user).permit(:level).merge(mission_id: mission.id)
   end
+
+
 end
