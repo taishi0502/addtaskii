@@ -72,6 +72,13 @@ nav{
   background-color: white;
   color: #000055;
 }
+
+.alert{
+  width: auto;
+}
+.btn-danger{
+  font-family: 'Poppins', sans-serif;
+}
     /*以下達成ボタン*/
 .successbtn{
   text-align: end;
@@ -162,7 +169,7 @@ a.btn--circle {
 .setagoalbtn:hover{
 
   font-family: 'Poppins', sans-serif;
-  border: 2px solid #FFD700;
+  border: 2px solid #000055;
   background-color: #000055;
   color: white;
   border-radius: 50%;

@@ -9,9 +9,12 @@
           <h3 class="top">Be together</h3>
        <% end %>
      </div>
+     <% if user_signed_in?%>
      <div class="missionset-btn col-sm-6">
        <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
      </div>
+     <% else %>
+     <% end %>
     </div>
  </div>
 
