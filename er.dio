@@ -1,40 +1,40 @@
 <mxfile host="65bd71144e">
     <diagram id="pkUCQiYbjy5UMkIxtuz1" name="ページ1">
-        <mxGraphModel dx="511" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="578" dy="486" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="200" width="160" height="120" as="geometry"/>
+                    <mxGeometry x="40" y="200" width="160" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="name" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="2" vertex="1">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="email&#10;&#10;encrypted_password" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="2" vertex="1">
-                    <mxGeometry y="56" width="160" height="64" as="geometry"/>
+                <mxCell id="4" value="email&#10;&#10;encrypted_password&#10;&#10;level&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="2" vertex="1">
+                    <mxGeometry y="56" width="160" height="84" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="tasks" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="320" y="450" width="160" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="task&#10;&#10;mission" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                <mxCell id="7" value="task&#10;&#10;mission_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
                     <mxGeometry y="26" width="160" height="74" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="missions" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="320" y="200" width="160" height="130" as="geometry"/>
+                    <mxGeometry x="320" y="200" width="160" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="mission" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="9" vertex="1">
-                    <mxGeometry y="26" width="160" height="30" as="geometry"/>
+                    <mxGeometry y="26" width="160" height="24" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="limit&#10;&#10;user" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="9" vertex="1">
-                    <mxGeometry y="56" width="160" height="74" as="geometry"/>
+                <mxCell id="11" value="startdate&#10;&#10;limitdate&#10;&#10;usert_id&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="9" vertex="1">
+                    <mxGeometry y="50" width="160" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="belongs_to :user&lt;br&gt;has_,many :tasks&lt;br&gt;belongs_to :user" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="320" y="330" width="160" height="80" as="geometry"/>
+                <mxCell id="12" value="belongs_to :user&lt;br&gt;has_many :tasks, depend: :destroy&lt;br&gt;has_many :favorites, depend: :destroy" style="whiteSpace=wrap;html=1;align=center;" parent="9" vertex="1">
+                    <mxGeometry y="140" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="has_many :missions&lt;br&gt;belongs_to :count" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="320" width="160" height="60" as="geometry"/>
+                <mxCell id="14" value="has_many :missions, deepend: :destroy&lt;br&gt;has_many :favorites, depend: :destroy" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="340" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;exitX=1.019;exitY=1.008;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="4" target="12" edge="1">
+                <mxCell id="18" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;exitX=1.005;exitY=0.879;exitDx=0;exitDy=0;entryX=0;entryY=0.896;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" parent="1" source="4" target="11" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="230" y="390" as="sourcePoint"/>
                         <mxPoint x="330" y="290" as="targetPoint"/>
@@ -49,19 +49,25 @@
                 <mxCell id="13" value="belngs_to :mission" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="320" y="550" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="counts" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="20" value="favorites" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="40" y="450" width="160" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="count&#10;&#10;user" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="20">
+                <mxCell id="21" value="user_id&#10;&#10;mission_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="20" vertex="1">
                     <mxGeometry y="26" width="160" height="74" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="belngs_to :user" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="22" value="belngs_to :user&lt;br&gt;belongs_to :mission" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="40" y="550" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="22" target="4">
+                <mxCell id="28" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.73;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="21">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="220" y="490" as="sourcePoint"/>
-                        <mxPoint x="320" y="390" as="targetPoint"/>
+                        <mxPoint x="210.79999999999995" y="339.836" as="sourcePoint"/>
+                        <mxPoint x="330" y="340.64" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1.01;entryY=0.411;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="22">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="210.79999999999995" y="339.836" as="sourcePoint"/>
+                        <mxPoint x="330" y="340.64" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
