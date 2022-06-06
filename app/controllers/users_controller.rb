@@ -5,4 +5,6 @@ class UsersController < ApplicationController
     @mylevel = current_user&.level
     @userid = current_user&.id
   end
+
+
 end

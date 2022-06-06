@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "missions#index"
-  resources :users, only: [:show] 
+  resources :users, only: [:show] do
+    resources :ranks, only: [:index]
+  end
   resources :missions do
     resources :tasks, only: [:create]
     resource :favorites, only: [:create, :destroy]
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
       member do
         get 'levelup'
       end
+
+
   
 
   end
