@@ -12,6 +12,7 @@
      <% if user_signed_in?%>
      <div class="missionset-btn col-sm-6">
        <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
+       <%= link_to 'ranking', user_ranks_path(@userid), class: "setagoalbtn" %>
      </div>
      <% else %>
      <% end %>

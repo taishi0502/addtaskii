@@ -1,0 +1,33 @@
+<div class="rank-jumbotron">
+  <div class="container">
+    <div class="row">
+
+      <div class="col">
+       <div class="ranking">
+       <div class="ranks">第1位</div>
+       <div class="ranks">第2位</div>
+       <div class="ranks">第3位</div>
+       <div class="ranks">第4位</div>
+       <div class="ranks">第5位</div>
+       <div class="ranks">第6位</div>
+       <div class="ranks">第7位</div>
+       <div class="ranks">第8位</div>
+       <div class="ranks">第9位</div>
+       <div class="ranks">第10位</div>
+       <div class="ranks">以下</div>
+       </div>
+
+     </div>
+
+
+      <div class="col">
+         <% @ranks.each do |rank| %>
+            <div class="ranking-user">
+               <div class="user-level"> Lv. <%= rank.level %> <%= rank.name %></div>
+            </div>
+         <% end %>
+     </div>
+
+    </div>
+  </div>
+</div>
