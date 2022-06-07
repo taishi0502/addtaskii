@@ -41,6 +41,23 @@ https://docs.google.com/spreadsheets/d/1d23P1VJI77z0I1MjthOvfvsaufuPnrINVdb5oIqy
 
 
 # 実装した機能についての画像やGIF及びその他の説明
+・目標設定機能
+https://gyazo.com/094677106d90b3d302f2e5af2ed24451
+
+・タスク設定機能
+https://gyazo.com/d13ff7654aabda9530dc79c75261f365
+
+・マイページにて自分の目標一覧
+https://gyazo.com/3f73934c1072057add97d15f8e6c2662
+
+・our goalsページにて他ユーザーの目標一覧
+https://gyazo.com/02ef9dab60e0f61b5aee11be5e27445d
+
+・we can do it機能にて他ユーザーを応援
+https://gyazo.com/c80c288addaf79f8caea1fa450131d62
+
+・目標達成ボタン実装
+https://gyazo.com/d628ae983ba5cb1d55addd0d9c765f1a
 
 
 # 実装予定の機能
@@ -112,7 +129,7 @@ HTML, CSS, JavaScript, Ruby, Ruby On Rails, vscode
 # ①『目標を達成するためのタスク設定を促すこと』
 　目標や解決したい事柄を達成するためには、ユーザー自身が達成のための条件を具体的に考え行動に移すことが重要になる。
 
-　そのため、ただ目標や解決したい事柄を記録するのではなく、目標達成（課題解決など）において、何が障壁となるのか、
+　そのため、目標や解決したい事柄を記録するだけではなく、目標達成（課題解決など）において、何が障壁となるのか、
 目標達成のためのタスクを自らで考え、言語化させるような表現を実装したく、タスク未設定の目標については警告を出すよう
 実装した。
 
