@@ -17,12 +17,12 @@ class MissionsController < ApplicationController
   end
 
   def create
-    mission = Mission.new(mission_params)
-    if mission.save
-      flash[:success] = '更に課題についてのtaskをaddしましょう！'
-      redirect_to root_path
+    @user = User.find(current_user.id)
+    @mission = Mission.new(mission_params)
+    if @mission.save
+      redirect_to user_path(@user)
     else
-      render :new
+      render action:  :new
     end
   end
 
@@ -43,9 +43,10 @@ class MissionsController < ApplicationController
   end
 
   def update
+    @user = User.find(current_user.id)
     @mission = Mission.find(params[:id])
     if @mission.update(mission_params)
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -66,10 +67,11 @@ class MissionsController < ApplicationController
   end
 
   def destroy
+    @user = User.find(current_user.id)
     @mission = Mission.find(params[:id])
     @mission.destroy
 
-    redirect_to root_path
+    redirect_to user_path(@user)
   end
 
   private

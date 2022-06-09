@@ -6,5 +6,4 @@ class UsersController < ApplicationController
     @userid = current_user&.id
   end
 
-
 end
