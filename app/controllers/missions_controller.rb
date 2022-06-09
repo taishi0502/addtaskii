@@ -22,7 +22,7 @@ class MissionsController < ApplicationController
     if @mission.save
       redirect_to user_path(@user)
     else
-      render action:  :new
+      redirect_to new_mission_path
     end
   end
 
