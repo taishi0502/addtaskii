@@ -6,6 +6,8 @@ class TasksController < ApplicationController
     else
       @mission = @task.mission
       @tasks = @mission.tasks
+
+      redirect_to mission_path(@mission)
     end
   end
 
