@@ -58,10 +58,15 @@
           <div class="ourgoals col-sm-6">
              <h3 class="top">our goals</h3>
           </div>
-          <div class="missionset-btn col-sm-6">
+      <div class="col-sm-6 pt-3  ">
+          <div class="usershow-btn">
              <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
              <%# <%= link_to 'ranking', user_ranks_path(@userid), class: "setagoalbtn" %> 
           </div>
+          <div class="usershow-btn mt-4">
+            <%= link_to 'my goals',"/users/#{@userid}", class: "setagoalbtn" %>
+          </div>
+       </div>
        <% end %>
     </div>
  </div>
