@@ -56,6 +56,7 @@
       <% if user_signed_in? && current_user.id == mission.user.id %>
          <% if mission.tasks.present? %>
              <%= link_to 'add a task', mission_path(mission.id),method: :get, class: "addtaskbtn "%>
+            <%# <%= image_tag 'addtaskii-05.svg', alt: "logo",class:"adlogo2"%> 
          <% else %>
             <%# <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%> 
          <% end %>

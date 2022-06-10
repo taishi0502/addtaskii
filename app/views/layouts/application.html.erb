@@ -17,6 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">   
 
+
+<%= favicon_link_tag('addtaskii-04.svg') %>
      </head>
 
 
@@ -26,24 +28,8 @@
   <div class="container-fluid">
   <div class="left-parent">
   <?xml version="1.0" encoding="utf-8"?>
-    <svg width="19px" height="15px" version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-     	 y="0px" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-      <style type="text/css">
-       	.st0{fill:#000033;}
-	      .st1{fill:#FFFFFF;}
-      </style>
-      <g>
-	       <path class="st1" d="M25.77,30H4.23C1.89,30,0,28.11,0,25.77V4.23C0,1.89,1.89,0,4.23,0h21.54C28.11,0,30,1.89,30,4.23v21.54
-	          	C30,28.11,28.11,30,25.77,30z"/>
-	       <g>
-	       	<path class="st0" d="M16.88,4.76L8.13,25.33H2.97l9.11-20.69"/>
-	      	<path class="st0" d="M12.08,4.65h3.79c3.01,0,5.47,0.41,7.84,2.5c2.29,2.03,3.33,4.81,3.33,7.88c0,3.02-1.07,5.69-3.28,7.72
-	       		c-2.4,2.2-4.8,2.61-7.94,2.61h-3.73V4.65z"/>
-	        <path class="st1" d="M16.39,8.96c2.2,0.05,3.33,0.42,4.47,1.42c1.25,1.11,1.87,2.63,1.87,4.65c0,1.89-0.62,3.38-1.88,4.54
-	   	    	c-1.15,1.06-2.2,1.42-4.45,1.47V8.96z"/>
-	       </g>
-      </g>
-    </svg>
+
+    <%= image_tag('addtaskii-05.svg') %>
     <%= link_to 'addtaskii', root_path, class: "navbar-brand"%>
   </div>
    <div class="right-parent">
@@ -59,8 +45,8 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
         <% if user_signed_in? %>
-          <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "navlist"%></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navlist"%></li>
+          <li><%= link_to "#{current_user.name}さんのページ", "/users/#{current_user.id}", class: "navlist"%></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlist"%></li>
         <% else %>
             <li><%= link_to "ログイン", new_user_session_path, class: "navlist" %></li>
             <li><%= link_to "新規登録", new_user_registration_path, class: "navlist"%></li>
@@ -68,8 +54,8 @@
         </li>
       </ul>
       <%= form_with(url: search_missions_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
-        <%= form.submit "検索", class: "tn btn-outline-success" %>
+        <%= form.text_field :keyword, placeholder: "他の人のtaskを参考にしたい。", class: "form-control" %>
+        <%= form.submit "taskどうしよう", class: "searchbtn" %>
       <% end %>
 
 

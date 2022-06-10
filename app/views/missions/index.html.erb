@@ -2,20 +2,67 @@
 <div class="jumbotron">
  <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6">
+  
        <% unless user_signed_in? %>
-          <h2 class="mypage-title"></span>addtaskiiへようこそ。 </h2>  
+        <div class="missionset-btn col-sm-6">
+          <h1 class="mypage-title"> <%= image_tag 'addtaskii-05.svg', alt: "logo",class:"adlogo"%>| addtaskiiへようこそ。</h1>  
+        </div>
+        <div class="btns col-md-6 mt-3">
+          <%# <%= image_tag 'addtaskii-05.svg', alt: "logo",class:"adlogo"%> 
+          <%= link_to "Login", new_user_session_path, class: "loginbtn" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "signupbtn"%>
+          <h6 class="mypage-sbtitle ">Come and join team!</h2>  
+        </div>
+
+        <div class="photo1 col-md-6">
+         <%= image_tag '5.png', alt: "kohlipe", class:'kohlipe mt-5'  %>
+        </div>
+        <div class="textparent col-md-6 mt-5">
+          <span class="text">
+          <h5 class="subtitle mb-4">addtaskiiはあなたの目標達成を支援します。</h5>
+          <h6 class="mb-2">目標は、日常の小さなことから大きなことまで。</h6>
+          <h6 class="mb-2">試しにまずはset a goalから設定してみましょう。</h6>
+          </span>
+        </div>
+
+
+        <div class="textparent col-md-6 mt-5">
+          <span class="text">
+          <h5 class="subtitle mb-4">あなたの目標達成には何が必要ですか？ </h5>
+          <h6 class="mb-2">目標達成には、そのための条件を考えることが大切です。</h6>
+          <h6 class="mb-2">set tasksから、目標達成のためのtaskを設定しましょう。</h6>
+          <h6>taskの設定が目標達成の可能性を高めます。</h6>
+          <h5 class="subtitle mt-5">きっとtaskはいくつかあります。</h6>
+          <h6 class="mt-2">思いついたらサクサクaddtaskしましょう。</h6>
+          </span>
+        </div>
+         <div class="photo2 col-md-6">
+           <%= image_tag '3.png', alt: "kohlipe", class:'kohlipe mt-5'  %>
+        </div>
+
+
+        <div class="photo3 col-md-6">
+          <%= image_tag '4.png', alt: "kohlipe", class:'kohlipe mt-5'  %>
+        </div>
+        <div class="textparent col-md-6 mt-5">
+          <span class="text">
+          <h5 class="subtitle mb-4">あなたの目標とそのtaskは参考にされます。</h5>
+          <h6 class="mb-2">同じ目標をもつ人はきっといます。<br>誰かのtaskを参考にできます。</h6>
+          <h5 class="subtitle mt-5">同じ目標を持つ者同士励まし合いましょう。</h6>
+          <h6 class="mt-2">we can do it の数をチェックできます。</h6>
+
+          </span>
+        </div>
+     </div>
        <% else %>
-          <h3 class="top">our goals</h3>
+          <div class="ourgoals col-sm-6">
+             <h3 class="top">our goals</h3>
+          </div>
+          <div class="missionset-btn col-sm-6">
+             <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
+             <%= link_to 'ranking', user_ranks_path(@userid), class: "setagoalbtn" %>
+          </div>
        <% end %>
-     </div>
-     <% if user_signed_in?%>
-     <div class="missionset-btn col-sm-6">
-       <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
-       <%= link_to 'ranking', user_ranks_path(@userid), class: "setagoalbtn" %>
-     </div>
-     <% else %>
-     <% end %>
     </div>
  </div>
 
@@ -23,11 +70,7 @@
  <div class="row">
    <% unless user_signed_in? %>
 
-   <div class="d-grid gap-2">
-     <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
-     <%= link_to "登録がお済みでない方はこちら", new_user_registration_path, class: "btn btn-primary"%>
-  </div>
-   
+
 
    <% else %>
     

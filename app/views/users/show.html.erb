@@ -3,7 +3,13 @@
   <div class="row">
      <div class="col-sm-6 pt-3  ">
        <div>
-          <h1 class="mypage-title"><%= @name %><span class="sannno">さんの</span>Goals</h1>
+          <h1 class="title"><%= @name %><span class="sannno">さんの</span>Goals</h1>
+          <div class="Acchivecount mb-3">
+            <%=@name%><span class="sannno">さんの今までの目標達成数</span> <%= @mylevel%>
+            <br><%@name%><span class="sannno">現在のGoal設定数</span> <%= 1000000%>
+            <br><% @name%><span class="sannno">現在のTask設定数</span> <%= 100000%>
+            <br><% @name%><span class="sannno">目標達成率</span> <%= '75%' %>
+          </div>
        </div>
      </div>
      <div class="col-sm-6 pt-3  ">
@@ -11,7 +17,7 @@
            <% else %>
               <div class="usershow-btn">
                  <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
-                 <%= link_to 'our goals',missions_path, class: "btn btn-success" %>
+                 <%= link_to 'our goals',missions_path, class: "setagoalbtn" %>
               </div>
           <% end %>
      </div>

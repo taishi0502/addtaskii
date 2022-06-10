@@ -21,14 +21,14 @@
 <% end %>
 
  <% if user_signed_in? && current_user.id == @mission.user.id %>
-  <%= form_with(model: [@mission, @task], local: true) do |form| %>
+  <%= form_with model: [@mission, @task], id: :taskform, local: false do |form| %>
      <div class="row">
-       <div class="col-sm-6">
+       <div  class="col-sm-6" >
          <%= form.text_field :task, placeholder: "目標達成のための障壁", rows: "2", class:"form-control" %>
        </div>
        <div class="col-sm-2">
           <% if @mission.tasks.present? %>
-             <%= form.submit "add a task", class: "addtaskbtn" %>
+             <%= form.submit "add a task", class: "addtaskbtn", id: "submit" %>
           <% else %>
              <%= form.submit "set tasks", class: "btn btn-danger" %>
           <% end %> 
@@ -37,7 +37,7 @@
   <% end %>
 <% end %>
 
-    <div class="tasks mt-3">
+    <div class="tasks mt-3" >
       <% if @mission.tasks.present? %>
        <p><<<  Task list  >>></p>
       <% else %>
