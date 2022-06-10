@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @name = current_user&.name
     @mylevel = current_user&.level
     @userid = current_user&.id
+    @mission = Mission.find_by(user_id: current_user.id)
   end
 
 end

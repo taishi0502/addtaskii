@@ -63,7 +63,15 @@ class MissionsController < ApplicationController
   end
 
   def search
-    @missions = Mission.search(params[:keyword])
+    @name = current_user&.name
+    @mylevel = current_user&.level
+    @userid = current_user&.id
+    @task = Task.new
+    if @missions = Mission.search(params[:keyword])
+        
+    else
+        render root_path
+    end
   end
 
   def destroy

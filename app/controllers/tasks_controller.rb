@@ -3,6 +3,7 @@ class TasksController < ApplicationController
     @task = Task.create(task_params)
     if @task.save
       redirect_to mission_path(@task.mission)
+      # render json:{ @task: task }
     else
       @mission = @task.mission
       @tasks = @mission.tasks
