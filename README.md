@@ -120,12 +120,6 @@ https://gyazo.com/183d90f75145dd4b22d34af6d01f99f1
 # 開発環境
 HTML, CSS, JavaScript, Ruby, Ruby On Rails, vscode
 
-# ローカルでの動作方法
-以下のコマンドを順に実行。
-% git clone https://github.com/taishi0502/addtaskii
-% cd addtaskii
-% bundle install
-% yarn install
 
 # 工夫したポイント
 # ①『目標を達成するためのタスク設定を促すこと』
