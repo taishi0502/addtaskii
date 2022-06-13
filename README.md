@@ -14,7 +14,7 @@ addtaskii
 
 # 2.タスクの設定
 ・その目標を達成するために障壁となる課題（タスク）を設定
-・目標が達成できたらAchievedボタンをクリック
+・目標が達成できたらAchieved!ボタンをクリック
 ・ヘッダーの検索機能から、自分と似た目標課題を検索し、他ユーザーの目標に対するタスクの考え方を確認できる。
 
 # 3.他ユーザーを励ます
@@ -32,34 +32,34 @@ addtaskii
 　その条件を全てクリアすることで達成できる条件ベースでの目標設定を手助けし、楽しく、モチベーションが上がるような
 アプリケーションを開発することにした。
 
+# 『addtaskii』
+・使い方はシンプルで、目標に対してのtaskをサクサクadd!していきます。
+
+・addtaskiiのiiは複数人という意味合いを込めました。
+
 
 # 洗い出した要件
 https://docs.google.com/spreadsheets/d/1d23P1VJI77z0I1MjthOvfvsaufuPnrINVdb5oIqy0wQ/edit#gid=982722306
 
 
-# 実装した機能についての画像やGIF及びその他の説明
-・目標設定機能
-https://gyazo.com/094677106d90b3d302f2e5af2ed24451
+# 実装した機能についての画像及び概要
+・トップページ（アプリケーション説明画面）
+<img width="1440" alt="スクリーンショット 2022-06-13 15 28 45" src="https://user-images.githubusercontent.com/103736298/173292817-a289a80b-1ddc-4c68-acc4-bd4ad38d84f0.png">
 
-・タスク設定機能
-https://gyazo.com/d13ff7654aabda9530dc79c75261f365
 
 ・マイページにて自分の目標一覧
-https://gyazo.com/3f73934c1072057add97d15f8e6c2662
+<img width="1437" alt="スクリーンショット 2022-06-13 15 55 03" src="https://user-images.githubusercontent.com/103736298/173296660-b5951fcd-741d-41dc-9e64-ce766ecbc594.png">
 
 ・our goalsページにて他ユーザーの目標一覧
-https://gyazo.com/02ef9dab60e0f61b5aee11be5e27445d
+<img width="1434" alt="スクリーンショット 2022-06-13 16 12 25" src="https://user-images.githubusercontent.com/103736298/173299206-f8a6413b-1a97-4b35-968a-1c02030c42f1.png">
 
-・we can do it機能にて他ユーザーを応援
-https://gyazo.com/c80c288addaf79f8caea1fa450131d62
-
-・目標達成ボタン実装
-https://gyazo.com/d628ae983ba5cb1d55addd0d9c765f1a
 
 
 # 実装予定の機能
 # ①ルーム作成機能の実装。
 　関係性をもつユーザー同士（チーム）で自分のタスクをシェアできる。
+
+※知人に使用してもらった結果、『目標やタスクは仲間内でシェアし合いたい』とのフィードバックがあったため、ルーム作成機能も追加実装予定です。
 
 # ②目標とタスクの管理状況の見える化
 　マイページにおいて現在の自分の目標とタスク状況が管理しやすいように各々の集計を表示。
@@ -122,20 +122,20 @@ HTML, CSS, JavaScript, Ruby, Ruby On Rails, vscode
 
 # ローカルでの動作方法
 以下のコマンドを順に実行。
-% git clone https://github.com/taishi0502/meta-helper
-% cd mete-helper
+% git clone https://github.com/taishi0502/addtaskii
+% cd addtaskii
 % bundle install
 % yarn install
 
 # 工夫したポイント
 # ①『目標を達成するためのタスク設定を促すこと』
+ 『目標を設定するだけでは達成に至らない可能性がある』という意識を持たせる。
+
 　目標や解決したい事柄を達成するためには、ユーザー自身が達成のための条件を具体的に考え行動に移すことが重要になる。
 
 　そのため、目標や解決したい事柄を記録するだけではなく、目標達成（課題解決など）において、何が障壁となるのか、
 目標達成のためのタスクを自らで考え、言語化させるような表現を実装したく、タスク未設定の目標については警告を出すよう
 実装した。
-
-　『目標を設定するだけでは達成に至らない可能性がある』という意識を持たせる。
 
 # ②『設定した目標は他ユーザーからも見られる』
 　設定した目標や解決したい事柄とそのタスクについては、目標一覧ページに表示される。
