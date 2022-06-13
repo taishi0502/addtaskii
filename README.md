@@ -114,7 +114,7 @@ https://gyazo.com/183d90f75145dd4b22d34af6d01f99f1
 
 
 # 画面遷移図
-https://gyazo.com/8fe1bb471f464a648d61f1ac2bbc9466
+<img width="642" alt="スクリーンショット 2022-06-13 17 00 05" src="https://user-images.githubusercontent.com/103736298/173307306-a1e4ab39-dcc8-44ff-9835-5dc88fa49546.png">
 
 
 # 開発環境
