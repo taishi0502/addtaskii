@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :missions, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :room_users
+  has_many :rooms, through: :room_users
   #  has_many :favorited_missions, through: :favorites, source: :mission
 end
