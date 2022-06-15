@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "missions#index"
+  resources :rooms, only: [:index, :new, :create]
   resources :users, only: [:show] do
     resources :ranks, only: [:index]
   end
