@@ -1,0 +1,18 @@
+<div class="room-form">
+  <h1>新規ルーム作成</h1>
+  <%= form_with model: @room, local: true do |f| %>
+   <div class="justify-content-md-center">
+     <div class="col-md-4">
+       <label class="form-label">チーム名を入力しましょう</label>
+       <%= f.text_field :room_name, class: "form-cotrol", placeholder: "チームA"%>
+     </div>
+     <%# <div class="col-md-4">
+     </div> %>
+     <div class="row justify-content-md-center">  
+       <div class="col-md-4">
+         <%= f.submit "create", class:"setgoalbtn"%>
+       </div>
+     </div>
+  <% end %>
+   </div>
+</div>
