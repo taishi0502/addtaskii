@@ -1,0 +1,16 @@
+          <%=form_with model: @room, local: true do |f|%>
+         
+          <select name="room[user_ids][]">
+          <option value="">参加したいチームがあればチーム名を入力してください。</option>
+          <% Room.where(id: @rooms.ids).each do |room| %>
+          <option value=<%= room.id %>><%= room.room_name %></option>
+          <% end %>
+        </select>
+
+         <div class='chat-room-form__field--left'></div>
+            <div class='chat-room-form__field--right'>
+              <%= f.submit class: 'chat-room-form__action-btn'%>
+            </div>
+        </div>
+
+        <% end %>

@@ -4,10 +4,17 @@
    <div class="justify-content-md-center">
      <div class="col-md-4">
        <label class="form-label">チーム名を入力しましょう</label>
-       <%= f.text_field :room_name, class: "form-cotrol", placeholder: "チームA"%>
+       <%= f.text_field :room_name, class: "form-control", placeholder: "チームA"%>
      </div>
-     <%# <div class="col-md-4">
-     </div> %>
+     <div class="col-md-4">
+      <select name="room[user_ids][]">
+          <option value="">チャットするユーザーを選択してください</option>
+          <% User.where.not(id: current_user.id).each do |user| %>
+          <option value=<%= user.id %>><%= user.name %></option>
+          <% end %>
+           </select>
+        <input name="room[user_ids][]" type="hidden" class="form-control" value = <%= current_user.id %>>
+      </div>
      <div class="row justify-content-md-center">  
        <div class="col-md-4">
          <%= f.submit "create", class:"setgoalbtn"%>
