@@ -7,6 +7,7 @@ class MissionsController < ApplicationController
     @name = current_user&.name
     @mylevel = current_user&.level
     @userid = current_user&.id
+    @room = Room.find_by(params[:id])
   end
 
   def new

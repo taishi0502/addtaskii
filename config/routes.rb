@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "missions#index"
-  resources :rooms, only: [:index, :new, :create]do
+  resources :rooms, only: [:index, :new, :create, :update]do
     member do 
       get 'join'
     end
   end
   resources :users, only: [:show] do
-    resources :ranks, only: [:index]
+    resources :ranks, only: [:index] 
   end
   resources :missions do
     resources :tasks, only: [:create]
