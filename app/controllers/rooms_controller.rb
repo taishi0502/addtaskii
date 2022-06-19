@@ -1,9 +1,14 @@
 class RoomsController < ApplicationController
   def index
-    
+    @name = current_user&.name
+    @mylevel = current_user&.level
+    @userid = current_user&.id
   end
   def new
      @room = Room.new
+     @name = current_user&.name
+     @mylevel = current_user&.level
+     @userid = current_user&.id
   end
 
   def create
@@ -17,6 +22,9 @@ class RoomsController < ApplicationController
    end
    
    def join
+        @name = current_user&.name
+    @mylevel = current_user&.level
+    @userid = current_user&.id
     @room = Room.find_by(params[:id])
     
 
