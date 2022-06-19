@@ -351,6 +351,24 @@ a.btn--circle {
   padding: 10px 50px 10px 50px;
   transition: all 0.7s ;
 }
+.setagoalbtn2{
+  background-color: #000077;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  border-radius: 10%;
+  border: 2px solid #000055;
+  padding: 5px 30px 5px 30px;
+}
+.setagoalbtn2:hover{
+
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  color:#000055 ;
+  border-radius: 10%;
+  border: 2px solid #000055;
+  padding: 7px 30px 7px 30px;
+  transition: all 0.7s ;
+}
 
 .form-label{
   font-family: 'Poppins', sans-serif;

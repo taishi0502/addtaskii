@@ -61,16 +61,16 @@
       <div class="col-sm-6 pt-3  ">
           <div class="usershow-btn">
              <%= link_to 'set a goal', new_mission_path, class: "setagoalbtn" %>
+            <%= link_to 'my goals',"/users/#{@userid}", class: "setagoalbtn" %>
              <%# <%= link_to 'ranking', user_ranks_path(@userid), class: "setagoalbtn" %> 
           </div>
           <div class="usershow-btn mt-4">
-            <%= link_to 'my goals',"/users/#{@userid}", class: "setagoalbtn" %>
           </div>
-          <div class="usershow-btn mt-4">
-            <%= link_to 'new_room',new_room_path, class: "setagoalbtn" %>
+          <div class="usershow-btn ">
+            <%= link_to 'new_room',new_room_path, class: "setagoalbtn2" %>
           </div>
-          <div class="usershow-btn mt-4">
-            <%= link_to 'join_team',join_room_path(id: @room.id), class: "setagoalbtn" %>
+          <div class="usershow-btn mt-3">
+              <%= link_to 'join_team',join_room_path(id: @room.id), class: "setagoalbtn2" %>
           </div>
        </div>
        <% end %>
@@ -80,9 +80,6 @@
 <div class="container-fluid">
  <div class="row">
    <% unless user_signed_in? %>
-
-
-
    <% else %>
     
 
