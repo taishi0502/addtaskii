@@ -1,1 +1,96 @@
 <h1>成功！</h1>
+         <div class="row">
+
+
+
+   <div class="col-md-4 pt-3  ">
+      <div class="card shadow">
+        <div class="mission_user_name">
+         <% if user_signed_in? && current_user.id == @mission.user.id %>
+             <div class="myname">My goal</div>
+         <% else %>
+           <% if mission.user.level == nil %>
+             <%= "Lv.0"%>
+             <%= mission.user.name%>
+           <% else %>
+             <%= "Lv.#{mission.user.level}"%>
+             <%= mission.user.name%>
+            <% end %>
+         <% end %>
+       </div>
+    <div class="card-body " >
+        <h5 class="card-title mb-4"> <%= mission.mission%></h5>
+         <ul class="list-group list-group-flush">
+         <li class="list-group-item">start　　<%= mission.startdate%></li>
+         <li class="list-group-item">end  　　<%= mission.limitdate%></li>
+         </ul>
+        <% if mission.tasks.present? %>
+        <% else %>
+          <div class="row">
+              <div class="spinner-grow text-danger col-6" role="status">
+                 <span class="visually-hidden"></span>
+              </div>
+             <div class="alert alert-danger col-sm-12 " role="alert">
+                  この目標に対する具体的なアクションを設定しないため達成できない可能性があります！
+                  
+                   <% if current_user.id == mission.user.id %>
+                   <br>
+                   <%= link_to 'set tasks', mission_path(mission.id),method: :get, class: "btn btn-danger"%>
+                   <br>
+                  <% else %>
+                  <% end %>
+              </div>
+           </div>  
+         <% end %>
+        <div class="tasks">
+           <% if mission.tasks.present? %>
+           <p><<<  Task list  >>></p>
+           <% else %>
+           <% end %>
+           <% mission.tasks.each do |t| %>
+           <p>
+           <%= t.task %>
+           </p>
+           <% end %>
+         </div>   
+ 
+        <p class="card-text text-right"></p>
+      <% if user_signed_in? && current_user.id == mission.user.id %>
+         <% if mission.tasks.present? %>
+             <%= link_to 'add a task', mission_path(mission.id),method: :get, class: "addtaskbtn "%>
+            <%# <%= image_tag 'addtaskii-05.svg', alt: "logo",class:"adlogo2"%> 
+         <% else %>
+            <%# <%= link_to 'タスク設定', mission_path(mission.id),method: :get, class: "btn btn-danger"%> 
+         <% end %>
+      <% else %>
+           <%= link_to 'details', mission_path(mission.id),method: :get, class: "btn btn-sm btn-show"%>
+     <% end %>
+
+     <div id="favorite_buttons_<%= mission.id %>">
+        <%= render "favorites/favorite", mission: mission %>
+     </div>
+    <div class="editdeletebtn mt-3">
+      <% if user_signed_in? && current_user.id == mission.user.id %>
+         <% if user_signed_in? && current_user.id == mission.user.id %>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+                <%= link_to 'edit', edit_mission_path(mission.id),method: :get, class: "btn btn-outline"%>
+                <%= link_to 'delete', mission_path(mission.id),method: :delete, class: "btn btn-outline"%>
+            </div>
+               <% if mission.tasks.present? %>
+                <div class="successbtn">
+                  <%= link_to 'Achieved!', levelup_mission_path(mission.id),class: "btn btn--orange btn--circle btn--circle-a btn--shadow"%>
+               </div>
+               <% end %>
+          <% end %>
+      <% end %>
+    </div>
+
+ 
+
+
+</div>
+</div>
+</div>
+
+
+         </div>

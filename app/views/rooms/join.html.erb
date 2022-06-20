@@ -2,10 +2,10 @@
          
           <select name="room[user_ids][]">
           <option value="">参加したいチームがあればチーム名を入力してください。</option>
-          <% Room.where(id: params[:id]).each do |room| %>
+          <% Room.where(params[:id]).each do |room| %>
           <option value=<%= room.id %>><%= room.room_name %></option>
           <% end %>
-        </select>
+        </select> 
 
          <div class='chat-room-form__field--left'></div>
             <div class='chat-room-form__field--right'>
