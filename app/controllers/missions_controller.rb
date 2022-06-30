@@ -60,7 +60,7 @@ class MissionsController < ApplicationController
 
     @mission = Mission.find(params[:id])
     @mission.destroy
-    redirect_to root_path
+    redirect_to user_path(@user)
   end
 
   def search
