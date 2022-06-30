@@ -87,11 +87,11 @@
                   <% if user_signed_in? && current_user.id == mission.user.id %>
                       <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
                           <%= link_to 'edit', edit_mission_path(mission.id),method: :get, class: "btn btn-outline"%>
-                          <%= link_to 'delete', mission_path(mission.id),method: :delete, class: "btn btn-outline"%>
+                          <%= link_to 'delete', mission_path(mission.id),method: :delete, class: "btn btn-outline", data: {confirm: "本当に削除しますか？"} %>
                       </div>
                         <% if mission.tasks.present? %>
                          <div class="successbtn">
-                          <%= link_to 'Achieved!', levelup_mission_path(mission.id),class: "btn btn--orange btn--circle btn--circle-a btn--shadow"%>
+                          <%= link_to 'Achieved!', levelup_mission_path(mission.id),class: "btn btn--orange btn--circle btn--circle-a btn--shadow", data: {confirm: "達成おめでとうございます!!"} %>
                          </div>
                          <% end %>
                    <% end %>
